@@ -3,12 +3,9 @@ title: Secrets & Portals
 description: How a default HyDE setup handles secrets, XDG compliance, autostart, and desktop portals.
 sidebar:
   order: 3
-  badge:
-    text: Draft
-    variant: caution
 ---
 
-This document aims to explain how HyDE handles secrets, XDG compliance, autostart, and desktop portals. It is intended to clear up common confusion and prevent frequently reported issues. This document is a work in progress and may not be complete.
+This document aims to explain how HyDE handles secrets, XDG compliance, autostart, and desktop portals. It is intended to clear up common confusion and prevent frequently reported issues. This document is a work in progress and may require updating in the future-.
 
 ## Secrets
 

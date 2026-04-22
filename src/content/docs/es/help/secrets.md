@@ -3,9 +3,6 @@ title: Secretos y portales
 description: Cómo una instalación estándar de HyDE maneja secretos, compatibilidad con XDG, inicio automático y portales de escritorio.
 sidebar:
   order: 3
-  badge:
-    text: Draft
-    variant: caution
 ---
 
 Este documento busca explicar cómo HyDE maneja secretos, compatibilidad con XDG, inicio automático y portales de escritorio. Está pensado para aclarar confusiones comunes y prevenir problemas reportados frecuentemente. Este documento es un trabajo en progreso y puede no estar completo.
@@ -50,7 +47,7 @@ Luego reinicia.
 
 1. **Un servicio requiere elevación** — Un servicio (como GParted o Dolphin) requiere elevación para realizar una tarea. El sistema usa las políticas definidas por `polkit` (establecidas en `/usr/share/polkit-1/...`) para determinar si la tarea requiere privilegios elevados. Si se necesita elevación, el agente polkit que `polkitkdeauth.sh` lanzó renderiza un prompt pidiendo la contraseña al usuario. Si es válida, el servicio puede escalar privilegios temporalmente.
 
-2. **Recuperar una credencial** — Cuando la aplicación necesite esas credenciales de nuevo, el agente polkit solicita tu contraseña. Esto debería ser fluido siempre y cuando no te falten dependencias o tengas una mala configuración por haber instalado [HyDE incorrectamente](../../getting-started/installation/).
+2. **Recuperar una credencial** — Cuando la aplicación necesite esas credenciales de nuevo, el agente gráfico de polkit solicita tu contraseña. Esto debería ser fluido siempre y cuando no te falten dependencias o tengas una mala configuración por haber instalado [HyDE incorrectamente](../../getting-started/installation/).
 
 ---
 
@@ -95,7 +92,7 @@ HyDE incluye tres scripts de configuración para integrarse con UWSM y aplicar l
 | `00-hyde.sh` | `$XDG_CONFIG_HOME/uwsm/env-hyprland.d/` | Establece valores por defecto para apps Electron, rutas de configuración de Hyprland y respaldos de toolkit. |
 
 :::note[No necesitas editar estos]
-Estas scripts son opinionadas para que las variables, keybinds y configuración de tema de HyDE tengan respaldos redundantes (buenos). Si tienes problemas de autostart, la recomendación es asegurarte de que UWSM esté seleccionado en tu gestor de inicio de sesión. Alternativamente, reinstala HyDE para asegurar que UWSM esté correctamente configurado, eliminando configuraciones residuales en `~/.local` y `~/.local/share`.
+Estas scripts son opinionadas para que las variables, keybinds y configuración de tema de HyDE tengan respaldos redundantes (buenos). Si tienes problemas de autostart, la recomendación es asegurarte de que UWSM esté seleccionado en tu gestor de inicio de sesión. Alternativamente, reinstala HyDE y asegura de que UWSM esté correctamente configurado.
 :::
 
 Consulta [la sección de configuración de Hyprland](../../configuring/hyprland/) para un control más preciso de lo que ocurre al iniciar sesión bajo HyDE.
